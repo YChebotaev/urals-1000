@@ -1,0 +1,27 @@
+html, body {
+  min-height: 100vh;
+}
+
+.Layout--withMap {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.TopBar__navbar--withoutMargin {
+  margin-bottom: 0;
+}
+
+.SummitOverlayContent {
+  background: #ffffff;
+  border-radius: 2px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 3px 6px -6px rgba(0,0,0,0.6)
+}
+
+.SummitsPage__tableContainer {
+  margin-top: 1rem;
+}
+
+.SummitPage__carouselContainer {
+  margin-bottom: 1rem;
+}
