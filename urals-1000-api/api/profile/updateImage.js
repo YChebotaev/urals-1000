@@ -8,5 +8,6 @@ module.exports = async (req, res) => {
     url: imageUrl
   }
   await user.save()
+  await user.populateClimbs({ withSummit: true })
   res.json(user)
 }

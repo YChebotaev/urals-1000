@@ -1,31 +1,30 @@
 import React, { Component } from 'react'
 import { PropTypes } from 'prop-types'
 import { isEmpty } from 'lodash'
-import { summitShape } from '../prop-types'
-import { ClimberSummit } from './ClimberSummit'
+import { ClimbSummit } from './ClimbSummit'
 
-export class ClimberSummitsList extends Component {
+export class ClimbSummitsList extends Component {
   static propTypes = {
-    summits: PropTypes.arrayOf(summitShape)
+    climbs: PropTypes.arrayOf(PropTypes.object) // TODO: More specific type
   }
 
   renderSummits() {
-    if (!isEmpty(this.props.summits)) {
-      return this.props.summits.map(this.renderSummit, this)
+    if (!isEmpty(this.props.climbs)) {
+      return this.props.climbs.map(this.renderSummit, this)
     } else {
       return 'Пока что не покорил ни одной вершины'
     }
   }
 
-  renderSummit(summit) {
+  renderSummit({ summit }) {
     return (
-      <ClimberSummit summit={summit} key={summit._id} />
+      <ClimbSummit summit={summit} key={summit._id} />
     )
   }
 
   render() {
     return (
-      <div className="ClimberSummitsList">
+      <div className="ClimbSummitsList">
         <h2>Список посещенных вершин</h2>
         {
           this.renderSummits()

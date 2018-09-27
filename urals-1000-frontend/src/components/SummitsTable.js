@@ -22,8 +22,8 @@ export class SummitsTable extends Component {
     return <Link to={`/#/${lat}/${lon}`}>{ridge}</Link>
   }
 
-  summitClimbersFormatters = (climbers) => {
-    return climbers.length
+  summitClimbsFormatters = (climbs) => {
+    return climbs.length
   }
 
   render() {
@@ -33,7 +33,7 @@ export class SummitsTable extends Component {
           <TableHeaderColumn isKey dataField="name" dataFormat={this.summitNameFormatter}>Название</TableHeaderColumn>
           <TableHeaderColumn dataField="height">Высота</TableHeaderColumn>
           <TableHeaderColumn dataField="ridge" dataFormat={this.summitRidgeFormatter}>Хребет</TableHeaderColumn>
-          <TableHeaderColumn dataField="climbers" dataFormat={this.summitClimbersFormatters}>Восходителей</TableHeaderColumn>
+          <TableHeaderColumn dataField="climbs" dataFormat={this.summitClimbsFormatters}>Восходителей</TableHeaderColumn>
         </BootstrapTable>
       </div>
     )

@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types'
 
-export const climberShape = PropTypes.shape({
+export const climbShape = PropTypes.shape({
   _id: PropTypes.string,
   name: PropTypes.string,
   date: PropTypes.string,
@@ -18,7 +18,7 @@ export const summitShape = PropTypes.shape({
   name: PropTypes.string,
   height: PropTypes.number,
   ridge: PropTypes.string,
-  climbers: PropTypes.arrayOf(climberShape)
+  climbs: PropTypes.arrayOf(climbShape)
 })
 
 export const profileShape = PropTypes.object // TODO

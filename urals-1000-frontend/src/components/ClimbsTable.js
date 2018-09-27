@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import { PropTypes } from 'prop-types';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table'
 import { Image } from 'react-bootstrap'
-import { climberShape } from '../prop-types'
+import { climbShape } from '../prop-types'
 
-export class ClimbersTable extends Component {
+export class ClimbsTable extends Component {
   static propTypes = {
-    climbers: PropTypes.arrayOf(climberShape)
+    climbs: PropTypes.arrayOf(climbShape)
   }
 
-  climberNameFormatter = (name, climber) => {
-    if (climber.avatar) {
-      const { avatar: { url } } = climber
+  climbNameFormatter = (name, climb) => {
+    if (climb.avatar) {
+      const { avatar: { url } } = climb
       return (
-        <div className="ClimbersTable__climberName">
+        <div className="ClimbsTable__climbName">
           <Image thumbnail src={url} width={60} height={60} alt="" />
           &nbsp;
           <span>{name}</span>
@@ -28,9 +28,9 @@ export class ClimbersTable extends Component {
 
   render() {
     return (
-      <div className="ClimbersTable">
-        <BootstrapTable data={this.props.climbers}>
-          <TableHeaderColumn isKey dataField="name" dataFormat={this.climberNameFormatter}>Название</TableHeaderColumn>
+      <div className="ClimbsTable">
+        <BootstrapTable data={this.props.climbs}>
+          <TableHeaderColumn isKey dataField="name" dataFormat={this.climbNameFormatter}>Название</TableHeaderColumn>
           <TableHeaderColumn dataField="climbings">Восхождений</TableHeaderColumn>
         </BootstrapTable>
       </div>

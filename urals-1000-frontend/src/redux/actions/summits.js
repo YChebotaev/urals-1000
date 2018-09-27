@@ -11,9 +11,9 @@ import {
   SUMMIT_DELETE_IMAGE,
   SUMMIT_DELETE_IMAGE_SUCCESS,
   SUMMIT_DELETE_IMAGE_ERROR,
-  SUMMIT_ADD_CLIMBER,
-  SUMMIT_ADD_CLIMBER_SUCCESS,
-  SUMMIT_ADD_CLIMBER_ERROR
+  SUMMIT_ADD_CLIMB,
+  SUMMIT_ADD_CLIMB_SUCCESS,
+  SUMMIT_ADD_CLIMB_ERROR
 } from '../actionTypes'
 
 export const fetchSummits = () => {
@@ -68,12 +68,12 @@ export const deleteImage = (id, imageUrl) => {
   }
 }
 
-export const addClimber = (id, data) => {
+export const addClimb = (id, data) => {
   return {
-    types: [SUMMIT_ADD_CLIMBER, SUMMIT_ADD_CLIMBER_SUCCESS, SUMMIT_ADD_CLIMBER_ERROR],
+    types: [SUMMIT_ADD_CLIMB, SUMMIT_ADD_CLIMB_SUCCESS, SUMMIT_ADD_CLIMB_ERROR],
     payload: {
       request: {
-        url: `/summits/${id}/addClimber`,
+        url: `/summits/${id}/addClimb`,
         method: 'POST',
         data
       }

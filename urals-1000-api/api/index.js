@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const jwt = require('express-jwt')
 const summits = require('./summits')
-const climbers = require('./climbers')
+const climbs = require('./climbs')
 const token = require('./token')
 const profile = require('./profile')
 
@@ -14,7 +14,7 @@ const jwtAuth = jwt({
 api.use('/token', token)
 
 api.use('/summits', jwtAuth, summits)
-api.use('/climbers', jwtAuth, climbers)
+api.use('/climbs', jwtAuth, climbs)
 api.use('/profile', jwtAuth, profile)
 
 module.exports = api

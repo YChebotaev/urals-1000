@@ -6,10 +6,10 @@ import ImagesUploader from 'react-images-uploader'
 import DatePicker from 'react-16-bootstrap-date-picker'
 import { concat, without } from 'lodash'
 import { withModal } from '../HOCs/withModal'
-import { ADD_CLIMBER } from '../constants/modalNames'
+import { ADD_CLIMB } from '../constants/modalNames'
 import { withSummit } from '../HOCs/withSummit'
 
-class AddClimberMarkup extends Component {
+class AddClimbMarkup extends Component {
   static propTypes = {
     open: PropTypes.bool,
     props: PropTypes.object,
@@ -33,7 +33,7 @@ class AddClimberMarkup extends Component {
 
   handleFormSubmit = e => {
     e.preventDefault()
-    this.props.addClimber(
+    this.props.addClimb(
       this.props.summit._id,
       this.state
     )
@@ -110,7 +110,7 @@ class AddClimberMarkup extends Component {
         <Modal.Footer>
           <Button
             type="submit"
-            bsClass="primary"
+            bsStyle="primary"
             form="1a4da328-48b0-42f5-9325-0201e7d170e8"
           >Сохранить</Button>
         </Modal.Footer>
@@ -119,7 +119,7 @@ class AddClimberMarkup extends Component {
   }
 }
 
-export const AddClimber = compose(
-  withModal(ADD_CLIMBER),
+export const AddClimb = compose(
+  withModal(ADD_CLIMB),
   withSummit
-)(AddClimberMarkup)
+)(AddClimbMarkup)

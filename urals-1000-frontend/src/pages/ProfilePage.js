@@ -14,7 +14,7 @@ import {
   Button
 } from 'react-bootstrap'
 import { withProfile } from '../HOCs/withProfile'
-import { ClimberSummitsList } from '../components/ClimberSummitsList'
+import { ClimbSummitsList } from '../components/ClimbSummitsList'
 import { modalOpen } from '../redux/actions/modal'
 import { PROFILE_PHOTO } from '../constants/modalNames'
 
@@ -85,7 +85,7 @@ class ProfilePageMarkup extends Component {
                 </FormGroup>
                 <Button type="sumbit" bsStyle="primary">Сохранить</Button>
               </form>
-              <ClimberSummitsList summits={this.props.profile.summits} />
+              <ClimbSummitsList climbs={this.props.profile.climbs} />
             </Col>
           </Row>
         </div>

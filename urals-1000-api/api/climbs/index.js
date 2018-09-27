@@ -2,8 +2,8 @@ const { Router } = require('express')
 const { wrap } = require('@awaitjs/express')
 const list = require('./list')
 
-const climbers = Router()
+const climbs = Router()
 
-climbers.get('/', wrap(list))
+climbs.get('/', wrap(list))
 
-module.exports = climbers
+module.exports = climbs

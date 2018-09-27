@@ -14,9 +14,9 @@ import {
 import { isEmpty } from 'lodash'
 import { withSummit } from '../HOCs/withSummit'
 import { Layout } from '../components/Layout'
-import { SUMMIT_PHOTO_UPLOAD, ADD_CLIMBER } from '../constants/modalNames'
+import { SUMMIT_PHOTO_UPLOAD, ADD_CLIMB } from '../constants/modalNames'
 import { modalOpen } from '../redux/actions/modal'
-import { ClimbersList } from '../components/ClimbersList'
+import { ClimbsList } from '../components/ClimbsList'
 
 export class SummitPageMarkup extends Component {
   static propTypes = {
@@ -34,13 +34,13 @@ export class SummitPageMarkup extends Component {
     this.props.modalOpen(SUMMIT_PHOTO_UPLOAD)
   }
 
-  handleClimberClick = () => {
-    this.props.modalOpen(ADD_CLIMBER)
+  handleClimbClick = () => {
+    this.props.modalOpen(ADD_CLIMB)
   }
 
   renderSummitCarouselItem(image) {
     return (
-      <Carousel.Item key={image.url}>
+      <Carousel.Item key={image._id}>
         <img
           src={image.url}
           width={image.width}
@@ -85,13 +85,13 @@ export class SummitPageMarkup extends Component {
                 </dl>
                 <dl>
                   <dt>Восходителей</dt>
-                  <dd>{this.props.summit.climbers.length}</dd>
+                  <dd>{this.props.summit.climbs.length}</dd>
                 </dl>
-                <Button bsStyle="primary" onClick={this.handleClimberClick}>Взошли на эту вершину?</Button>
+                <Button bsStyle="primary" onClick={this.handleClimbClick}>Взошли на эту вершину?</Button>
               </Col>
             </Row>
             <Row>
-              <ClimbersList climbers={this.props.summit.climbers} />
+              <ClimbsList climbs={this.props.summit.climbs} />
             </Row>
           </div>
         </Layout>

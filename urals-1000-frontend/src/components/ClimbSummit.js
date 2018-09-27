@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import { Media } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { summitShape } from '../prop-types'
-import { format } from 'date-fns'
 
-export class ClimberSummit extends Component {
+export class ClimbSummit extends Component {
   static propTypes = {
     summit: summitShape
   }
 
   render() {
     return (
-      <div className="ClimberSummit">
+      <div className="ClimbSummit">
         <Media>
           <Media.Body>
-            <Media.Heading>{this.props.summit.name}</Media.Heading>
-            <p>{format(this.props.summit.date, 'DD.MM.YYYY')}</p>
-            <p>{this.props.summit.comment}</p>
+            <Media.Heading>
+              <Link to={`/summits/${this.props.summit.name}-${this.props.summit._id}`}>{this.props.summit.name}</Link>
+            </Media.Heading>
           </Media.Body>
         </Media>
       </div>

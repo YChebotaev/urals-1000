@@ -5,7 +5,7 @@ import {
   fetchById,
   addImage,
   deleteImage,
-  addClimber
+  addClimb
 } from '../redux/actions/summits'
 
 const stateMapper = createStructuredSelector({
@@ -18,7 +18,7 @@ const actions = dispatch => bindActionCreators(
     fetchById,
     addImage,
     deleteImage,
-    addClimber
+    addClimb
   },
   dispatch
 )

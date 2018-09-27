@@ -25,7 +25,7 @@ class TopBarMarkup extends Component {
           <Nav pullRight>
             <NavItem href="/" active={this.isActive('/')}>Карта</NavItem>
             <NavItem href="/summits" active={this.isActive('/summits')}>Вершины</NavItem>
-            <NavItem href="/climbers" active={this.isActive('/climbers')}>Восходители</NavItem>
+            <NavItem href="/climbs" active={this.isActive('/climbs')}>Восходители</NavItem>
             <NavItem href="/about" active={this.isActive('/about')}>О проекте</NavItem>
             <NavItem href="/profile" active={this.isActive('/profile')}>Профиль</NavItem>
           </Nav>

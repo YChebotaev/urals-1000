@@ -1,13 +1,13 @@
 import { summits } from './summits'
 import { summit } from './summit'
 import { modal } from './modal'
-import { climbers } from './climbers'
+import { climbs } from './climbs'
 import { profile } from './profile'
 
 export {
   summits,
   summit,
   modal,
-  climbers,
+  climbs,
   profile
 }

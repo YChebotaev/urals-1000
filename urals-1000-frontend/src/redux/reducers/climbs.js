@@ -1,7 +1,7 @@
 import {
-  CLIMBERS_LOADING,
-  CLIMBERS_COMPLETE,
-  CLIMBERS_ERROR,
+  CLIMBS_LOADING,
+  CLIMBS_COMPLETE,
+  CLIMBS_ERROR,
 } from '../actionTypes'
 
 const initialState = {
@@ -10,21 +10,21 @@ const initialState = {
   error: false
 }
 
-export const climbers = (state = initialState, { type, payload, error }) => {
+export const climbs = (state = initialState, { type, payload, error }) => {
   switch (type) {
-    case CLIMBERS_LOADING:
+    case CLIMBS_LOADING:
       return {
         ...state,
         items: [],
         pending: true
       }
-    case CLIMBERS_COMPLETE:
+    case CLIMBS_COMPLETE:
       return {
         ...state,
         items: payload.data,
         pending: false
       }
-    case CLIMBERS_ERROR:
+    case CLIMBS_ERROR:
       return {
         ...state,
         error,

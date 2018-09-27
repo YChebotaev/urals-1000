@@ -1,18 +1,18 @@
 import { createStructuredSelector } from 'reselect'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { fetchClimbers } from '../redux/actions/climbers'
+import { fetchClimbs } from '../redux/actions/climbs'
 
 const stateMapper = createStructuredSelector({
-  climbers: state => state.climbers.items,
-  pending: state => state.climbers.pending
+  climbs: state => state.climbs.items,
+  pending: state => state.climbs.pending
 })
 
 const actions = dispatch => bindActionCreators(
   {
-    fetchClimbers
+    fetchClimbs
   },
   dispatch
 )
 
-export const withClimbers = connect(stateMapper, actions)
+export const withClimbs = connect(stateMapper, actions)
