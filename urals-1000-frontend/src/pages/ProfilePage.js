@@ -83,7 +83,7 @@ class ProfilePageMarkup extends Component {
                     onChange={this.handleNameChange}
                   />
                 </FormGroup>
-                <Button type="sumbit" bsStyle="primary">Сохранить</Button>
+                <Button type="submit" bsStyle="primary">Сохранить</Button>
               </form>
               <ClimbSummitsList climbs={this.props.profile.climbs} />
             </Col>

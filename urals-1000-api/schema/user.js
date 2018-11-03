@@ -7,7 +7,7 @@ const user = new mongoose.Schema({
   name: String,
   climbs: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'climbs'
+    ref: 'climb'
   }],
   url: String
 })

@@ -7,9 +7,7 @@ const profile = require('./profile')
 
 const api = Router()
 
-const jwtAuth = jwt({
-  secret: process.env.APP_JWT_SECRET
-})
+const jwtAuth = jwt({ secret: process.env.APP_JWT_SECRET }).unless({ path: '/api/summits/summits.gpx' })
 
 api.use('/token', token)
 

@@ -5,11 +5,11 @@ const climb = new mongoose.Schema({
   comment: String,
   user: {
     type: String,
-    ref: 'users'
+    ref: 'user'
   },
   summit: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'summits'
+    ref: 'summit'
   }
 })
 

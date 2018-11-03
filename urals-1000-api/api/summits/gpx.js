@@ -3,9 +3,7 @@ const { buildGPX, BaseBuilder } = require('gpx-builder')
 const { Point } = BaseBuilder.MODELS
 
 const mapSummitToPoint = summit => {
-  console.log(summit, summit.coords)
-  const lat = summit.coords[0]
-  const lon = summit.coords[1]
+  const [ lat, lon ] = summit.coords
   return new Point(lat, lon, {
     name: summit.name,
     ele: summit.height,

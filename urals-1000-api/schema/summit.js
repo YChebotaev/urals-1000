@@ -7,7 +7,7 @@ const summit = new mongoose.Schema({
   ridge: String,
   climbs: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'climbs'
+    ref: 'climb'
   }],
   coords: [Number],
   images: [{

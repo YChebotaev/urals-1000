@@ -1,5 +1,5 @@
 const User = require('../../model/User')
-const Summit = require('../../model/Summit')
+const populate = require('../../lib/populate2')
 
 module.exports = async (req, res) => {
   const users = await User.find({
@@ -9,7 +9,16 @@ module.exports = async (req, res) => {
   })
 
   await Promise.all(
-    users.map(async user => user.populateClimbs({ withSummit: true }))
+    users.map(
+      async user => {
+        await populate(user, 'climbs')
+        await Promise.all(
+          user.climbs.map(
+            climb => populate(climb, 'summit')
+          )
+        )
+      }
+    )
   )
 
   res.json(users)

@@ -26,12 +26,16 @@ export class ClimbsTable extends Component {
     }
   }
 
+  climbingsFormatter = (climbs, climb) => {
+    return climbs.length
+  }
+
   render() {
     return (
       <div className="ClimbsTable">
         <BootstrapTable data={this.props.climbs}>
           <TableHeaderColumn isKey dataField="name" dataFormat={this.climbNameFormatter}>Название</TableHeaderColumn>
-          <TableHeaderColumn dataField="climbings">Восхождений</TableHeaderColumn>
+          <TableHeaderColumn dataField="climbs" dataFormat={this.climbingsFormatter}>Восхождений</TableHeaderColumn>
         </BootstrapTable>
       </div>
     )

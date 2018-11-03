@@ -10,7 +10,6 @@ export class ClimbsList extends Component {
 
   renderClimbs() {
     if (this.props.climbs.length) {
-      debugger
       return this.props.climbs.map(this.renderClimb, this)
     } else {
       return 'Пока что вершину никто не покорил.'
