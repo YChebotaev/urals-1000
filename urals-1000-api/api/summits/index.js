@@ -8,11 +8,13 @@ const addImage = require('./addImage')
 const deleteImage = require('./deleteImage')
 const addClimb = require('./addClimb')
 const uploadImage = require('./uploadImage')
+const xls = require('./xls')
 
 const summit = Router()
 
 summit.get('/', wrap(list))
 summit.get('/summits.gpx', wrap(gpx))
+summit.post('/summits.xls', wrap(xls))
 summit.post('/:id/uploadImage', uploadImage)
 summit.post('/:id/addImage', bodyParser.json(), wrap(addImage))
 summit.delete('/:id/deleteImage', bodyParser.json(), wrap(deleteImage))
