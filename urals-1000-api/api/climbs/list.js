@@ -2,10 +2,10 @@ const User = require('../../model/User')
 const populate = require('../../lib/populate2')
 
 module.exports = async (req, res) => {
-  const users = await User.find({
-    climbings: {
-      $gt: 0
-    }
+  let users = await User.find({})
+
+  users = users.filter(user => {
+    return user.climbs.length > 0
   })
 
   await Promise.all(

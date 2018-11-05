@@ -24,9 +24,3 @@ user.methods.getOrCreateToken = async function() {
   }
   return this.token
 }
-
-user.methods.incrClimbings = async function() {
-  const climbings = this.climbings || 0
-  this.climbings = climbings + 1
-  return this.save()
-}

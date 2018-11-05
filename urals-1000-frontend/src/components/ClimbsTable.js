@@ -34,7 +34,7 @@ export class ClimbsTable extends Component {
     return (
       <div className="ClimbsTable">
         <BootstrapTable data={this.props.climbs}>
-          <TableHeaderColumn isKey dataField="name" dataFormat={this.climbNameFormatter}>Название</TableHeaderColumn>
+          <TableHeaderColumn isKey dataField="name" dataFormat={this.climbNameFormatter}>Имя</TableHeaderColumn>
           <TableHeaderColumn dataField="climbs" dataFormat={this.climbingsFormatter}>Восхождений</TableHeaderColumn>
         </BootstrapTable>
       </div>
