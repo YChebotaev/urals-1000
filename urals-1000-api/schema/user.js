@@ -30,22 +30,3 @@ user.methods.incrClimbings = async function() {
   this.climbings = climbings + 1
   return this.save()
 }
-
-user.methods.populateClimbs = async function({ withSummit = false } = {}) {
-  const Climb = mongoose.models.climb
-  const Summit = mongoose.models.summit
-  const climbs = await Promise.all(
-    this.climbs.map(async climbId => {
-      const climb = await Climb.findOne({
-        _id: climbId
-      })
-      if (withSummit) {
-        climb.summit = await Summit.findOne({
-          _id: climb.summit
-        })
-      }
-      return climb
-    })
-  )
-  return Object.assign(this, { climbs })
-}

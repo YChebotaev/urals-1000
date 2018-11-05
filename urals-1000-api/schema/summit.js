@@ -18,29 +18,4 @@ const summit = new mongoose.Schema({
   }]
 })
 
-summit.methods.populateClimbs = async function({ withSummit = false, withUser = true } = {}) {
-  const Climb = mongoose.models.climb
-  const User = mongoose.models.user
-  const Summit = mongoose.model.summit
-  this.climbs = await Promise.all(
-    this.climbs.map(async climbId => {
-      const climb = await Climb.findOne({
-        _id: climbId
-      })
-      if (withSummit) {
-        climb.summit = await Summit.findOne({
-          _id: climb.summit
-        })
-      }
-      if (withUser) {
-        climb.user = await User.findOne({
-          _id: climb.user
-        })
-      }
-      return climb
-    })
-  )
-  return this
-}
-
 module.exports = summit
