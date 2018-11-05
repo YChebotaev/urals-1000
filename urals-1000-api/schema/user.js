@@ -9,7 +9,10 @@ const user = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'climb'
   }],
-  url: String
+  url: String,
+  avatar: {
+    url: String
+  }
 })
 
 module.exports = user
