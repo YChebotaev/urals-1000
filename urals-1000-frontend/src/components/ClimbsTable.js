@@ -23,7 +23,7 @@ export class ClimbsTable extends Component {
         </div>
       );
     } else {
-      return <span>{name}</span>;
+      return <Link to={`/climbers/${climb._id}`}>{name}</Link>;
     }
   };
 
