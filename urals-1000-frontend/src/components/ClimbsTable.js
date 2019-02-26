@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import { Image } from "react-bootstrap";
 import { climbShape } from "../prop-types";
+import { Link } from "react-router-dom";
 
 export class ClimbsTable extends Component {
   static propTypes = {
@@ -18,7 +19,7 @@ export class ClimbsTable extends Component {
         <div className="ClimbsTable__climbName">
           <Image thumbnail src={url} width={60} height={60} alt="" />
           &nbsp;
-          <span>{name}</span>
+          <Link to={`/climbers/${climb._id}`}>{name}</Link>
         </div>
       );
     } else {
