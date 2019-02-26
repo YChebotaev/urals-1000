@@ -1,3 +1,3 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-mongoose.connect('mongodb://localhost:27017/urals1000')
+mongoose.connect(process.env.APP_MONGODB_URI);

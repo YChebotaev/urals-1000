@@ -1,29 +1,30 @@
-const User = require('../../model/User')
-const shortid = require('shortid')
+const User = require("../../model/User");
+const shortid = require("shortid");
 
 module.exports = async (req, res) => {
-  let { userId } = req.query
-  
+  let { userId } = req.query;
+
   let user = await User.findOne({
     _id: userId
-  })
+  });
 
   if (!user) {
     if (!userId) {
-      userId = shortid.generate()
+      userId = shortid.generate();
     }
     user = new User({
       _id: userId,
-      name: '',
-      climbings: 0
-    })
-    await user.save()
+      name: "",
+      climbings: 0,
+      createDate: new Date()
+    });
+    await user.save();
   }
 
-  const token = await user.getOrCreateToken()
+  const token = await user.getOrCreateToken();
 
   res.json({
     userId,
     token
-  })
-}
+  });
+};
