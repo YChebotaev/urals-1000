@@ -3,12 +3,6 @@ const Summit = require("../../model/Summit");
 const User = require("../../model/User");
 const Climb = require("../../model/Climb");
 
-const DEFAULT_CLIMB_AVATAR = {
-  url: "http://1000.southural.ru/static/climber_sm.png",
-  width: 50,
-  height: 50
-};
-
 module.exports = async (req, res) => {
   const user = await User.findOne({
     _id: req.user._id
