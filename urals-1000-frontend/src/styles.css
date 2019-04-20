@@ -7,8 +7,27 @@ html, body {
   overflow: hidden;
 }
 
+.TopBar__brand {
+  color: #ffffff !important;
+}
+
+.TopBar__navbar {
+  background-color: #3f51b5;
+  box-shadow: 0 3px 6px -3px black;
+  border: none;
+}
+
 .TopBar__navbar--withoutMargin {
   margin-bottom: 0;
+}
+
+.TopBar__nav-item > a {
+  color: #ffffff !important;
+}
+
+.TopBar__nav-item--active > a {
+  color: #ffffff !important;
+  background-color: #4d61d0 !important; 
 }
 
 .SummitOverlayContent {
